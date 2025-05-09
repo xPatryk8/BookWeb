@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Random Book Gnerator</title>
 
+		<script src="script.js"></script>
 		<link rel="stylesheet" href="style.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 	</head>
@@ -12,13 +13,46 @@
 		<header><h1>Random Book Generator</h1></header>
 
 		<main>
-			<section class="choose">
-				<select name="genre" id="genre">
-					<option value="">Select Genre</option>
-				</select>
+			<form>
+				<div class="multipleSelection">
+					<div class="selectBox" onclick="showCheckboxes()">
+						<select>
+							<option>Select options</option>
+						</select>
+						<div class="overSelect"></div>
+					</div>
+
+					<div id="checkBoxes">
+						<label for="second">
+							<input type="checkbox" id="second" />
+							Action
+						</label>
+						<br />
+						<label for="third">
+							<input type="checkbox" id="third" />
+							Horror
+						</label>
+						<br />
+						<label for="fourth">
+							<input type="checkbox" id="fourth" />
+							War
+						</label>
+						<br />
+						<label for="5">
+							<input type="checkbox" id="5" />
+							Biography
+						</label>
+						<br />
+						<label for="6">
+							<input type="checkbox" id="6" />
+							Adventure
+						</label>
+						<br />
+					</div>
+				</div>
 				<input type="text" name="author" id="author" placeholder="Author Name" />
 				<button>Generate Book</button>
-			</section>
+			</form>
 			<section class="results">
 				<section class="book">
 					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>

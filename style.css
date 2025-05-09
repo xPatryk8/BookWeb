@@ -33,7 +33,7 @@ select {
 
 	display: flex;
 	justify-content: center;
-	margin: 1em;
+	margin: 1rem;
 
 	border: 2px solid var(--border);
 	border-radius: 1.5rem;
@@ -100,4 +100,50 @@ button:hover {
 
 button:hover {
 	background-color: #3e35d4;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+}
+
+.selectBox {
+	position: relative;
+}
+
+.overSelect {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	cursor: pointer;
+}
+#checkBoxes {
+	position: absolute;
+	display: none;
+	width: 10em;
+
+	background-color: var(--background);
+
+	border: 1px solid var(--border);
+	border-radius: 0.4em;
+	background-color: white;
+}
+
+#checkBoxes label {
+	position: absolute;
+	margin: 0;
+
+	left: 1em;
+}
+
+#checkBoxes input {
+	padding: 0;
+	margin: 5px;
+	margin-right: 0;
+
+	width: 0.7em;
+	height: 0.7em;
 }
