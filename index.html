@@ -23,35 +23,35 @@
 					</div>
 
 					<div id="checkBoxes">
-						<label for="second">
-							<input type="checkbox" id="second" />
+						<label for="action">
+							<input type="checkbox" name="genre" value="action" />
 							Action
 						</label>
 						<br />
-						<label for="third">
-							<input type="checkbox" id="third" />
+						<label for="horror">
+							<input type="checkbox" name="genre" value="horror" />
 							Horror
 						</label>
 						<br />
-						<label for="fourth">
-							<input type="checkbox" id="fourth" />
-							War
+						<label for="romance">
+							<input type="checkbox" name="genre" value="romance" />
+							Romance
 						</label>
 						<br />
-						<label for="5">
-							<input type="checkbox" id="5" />
+						<label for="biography">
+							<input type="checkbox" name="genre" value="biography" />
 							Biography
 						</label>
 						<br />
-						<label for="6">
-							<input type="checkbox" id="6" />
+						<label for="adventure">
+							<input type="checkbox" name="genre" value="adventure" />
 							Adventure
 						</label>
 						<br />
 					</div>
 				</div>
 				<input type="text" name="author" id="author" placeholder="Author Name" />
-				<button>Generate Book</button>
+				<button id="generate" onclick="showBooks()">Generate Book</button>
 			</form>
 			<section class="results">
 				<section class="book">
