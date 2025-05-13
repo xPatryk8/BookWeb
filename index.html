@@ -51,46 +51,9 @@
 					</div>
 				</div>
 				<input type="text" name="author" id="author" placeholder="Author Name" />
-				<input type="button" id="generate" value="Generate Book" />
+				<input type="button" id="generate" onclick="showBooks()" value="Generate Book" />
 			</form>
-			<section class="results">
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsorem ipsum dolororem lor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsum dolororem ipsum dolor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsum dolor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsum dolor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-			</section>
+			<section id="results" class="results"></section>
 		</main>
 	</body>
 </html>
