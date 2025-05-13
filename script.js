@@ -26,55 +26,71 @@ function getData() {
 	return result;
 }
 
-async function getBooks() {
-	/* 	const subjectData = getData();
-	if (subjectData) {
-		// Check if subjectData is not empty
-		console.log("ok");
-	} else {
-		console.log("Please select at least one genre.");
-	} */
-
-	let url = "https://openlibrary.org/search.json?subject=" + getData();
+async function fetchBooks(url) {
 	console.log("URL:" + url);
 
 	try {
-		const response = await fetch(url, {
-			method: "GET",
-		});
+		const response = await fetch(url);
 		if (!response.ok) {
 			throw new Error(`Response status: ${response.status}`);
 		}
 
 		const json = await response.json();
-		console.log(json);
-		return json;
+		return await json;
 	} catch (error) {
 		console.error(error.message);
 	}
 }
 
-function showBooks() {
+async function jsonData() {
+	let json = await fetchBooks("https://openlibrary.org/search.json?subject=" + getData());
+	let pages = Math.ceil(json.numFound / 100);
+	let random_page = Math.floor(Math.random() * pages);
+	let titles = [];
+	let authors = [];
+
+	json = await fetchBooks("https://openlibrary.org/search.json?subject=" + getData() + "&page=" + random_page);
+
+	for (let i = 0; i <= 4; i++) {
+		let random = Math.ceil(Math.random() * 100);
+		titles[i] = json.docs[random].title;
+		authors[i] = json.docs[random].author_name;
+	}
+
+	return [titles, authors];
+}
+
+async function showBooks() {
 	window.onload = function () {
 		let results = getElementById("results");
 	};
+	results.innerHTML = "";
+
+	let data = await jsonData();
+
 	let book = document.createElement("section");
 	book.className = "books";
-	book.innerHTML = `<section class="book">
-	<div class="cover">
-		<img class="book_cover" src="design.png" alt="" />
-	</div>
-	<div class="book_info">
-		<h2 class="book_title">Book Title</h2>
-		<p class="author_name">Author Name</p>
-		<p class="descripttion">Lorem ipsorem ipsum dolororem lor sit amet</p>
-		<p class="more_info">
-			<a href="" target="_blank">
-				More Info
-			</a>
-		</p>
-	</div>
-</section>`;
 
-	results.appendChild(book);
+	for (let i = 0; i < 4; i++) {
+		book = document.createElement("section");
+		book.className = "books";
+		book.id = data[0][i];
+		book.innerHTML = `
+		<section class="book">
+			<div class="cover">
+				<img class="book_cover" src="design.png" alt="" />
+			</div>
+			<div class="book_info">
+				<h2 class="book_title">${data[0][i]}</h2>
+				<p class="author_name">${data[1][i]}</p>
+				<p class="descripttion">Lorem ipsorem ipsum dolororem lor sit amet</p>
+				<p class="more_info">
+					<a href="" target="_blank">
+						More Info
+					</a>
+				</p>
+			</div>
+		</section>`;
+		results.appendChild(book);
+	}
 }
