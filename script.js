@@ -26,7 +26,7 @@ function getData() {
 	return result;
 }
 
-async function fetchBooks(url) {
+async function fetchBooks(url, parse) {
 	console.log("URL:" + url);
 
 	try {
@@ -48,16 +48,20 @@ async function jsonData() {
 	let random_page = Math.floor(Math.random() * pages);
 	let titles = [];
 	let authors = [];
+	let id = [];
 
 	json = await fetchBooks("https://openlibrary.org/search.json?subject=" + getData() + "&page=" + random_page);
 
 	for (let i = 0; i <= 4; i++) {
 		let random = Math.ceil(Math.random() * 100);
+		console.log(random);
+		if (json.docs[random].cover_i == undefined) id[i] = "https://actar.com/wp-content/uploads/2015/12/nocover.jpg";
+		else id[i] = "https://covers.openlibrary.org/b/id/" + json.docs[random].cover_i + "-M.jpg";
 		titles[i] = json.docs[random].title;
 		authors[i] = json.docs[random].author_name;
 	}
 
-	return [titles, authors];
+	return [titles, authors, id];
 }
 
 async function showBooks() {
@@ -78,7 +82,7 @@ async function showBooks() {
 		book.innerHTML = `
 		<section class="book">
 			<div class="cover">
-				<img class="book_cover" src="design.png" alt="" />
+				<img class="book_cover" src="${data[2][i]}" alt="${data[0][i]}" />
 			</div>
 			<div class="book_info">
 				<h2 class="book_title">${data[0][i]}</h2>
