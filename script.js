@@ -12,6 +12,7 @@ function showCheckboxes() {
 	}
 }
 
+
 function getData() {
 	let checkboxes = document.getElementsByName("genre");
 	let result = "";
@@ -98,3 +99,4 @@ async function showBooks() {
 		results.appendChild(book);
 	}
 }
+
