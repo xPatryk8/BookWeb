@@ -79,7 +79,7 @@ a {
 	align-content: flex-start;
 }
 
-button {
+input[type="button"] {
 	background-color: var(--primary);
 	border: none;
 	color: white;
@@ -94,11 +94,11 @@ select {
 }
 
 select:hover,
-button:hover {
+input[type="button"]:hover {
 	cursor: pointer;
 }
 
-button:hover {
+input[type="button"]:hover {
 	background-color: #3e35d4;
 }
 

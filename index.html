@@ -23,74 +23,41 @@
 					</div>
 
 					<div id="checkBoxes">
-						<label for="second">
-							<input type="checkbox" id="second" name="genre" value="action" />
+<div id="checkBoxes">
+						<label for="action">
+							<input type="checkbox" name="genre" value="action" />
 							Action
 						</label>
 						<br />
-						<label for="third">
-							<input type="checkbox" id="third" name="genre" value="horror" />
+						<label for="horror">
+							<input type="checkbox" name="genre" value="horror" />
 							Horror
 						</label>
 						<br />
-						<label for="fourth">
-							<input type="checkbox" id="fourth" name="genre" value="war" />
-							War
+						<label for="romance">
+							<input type="checkbox" name="genre" value="romance" />
+							Romance
 						</label>
 						<br />
-						<label for="5">
-							<input type="checkbox" id="5" name="genre" value="biography" />
+						<label for="biography">
+							<input type="checkbox" name="genre" value="biography" />
 							Biography
 						</label>
 						<br />
-						<label for="6">
-							<input type="checkbox" id="6" name="genre" value="adventure" />
+						<label for="adventure">
+							<input type="checkbox" name="genre" value="adventure" />
+							Adventure
+						</label>
 							Adventure
 						</label>
 						<br />
 					</div>
 				</div>
 				<input type="text" name="author" id="author" placeholder="Author Name" />
-				<button onclick="showBooks()">Generate Book</button>
+
+				<input type="button" id="generate" onclick="showBooks()" value="Generate Book" />
 			</form>
-			<section class="results">
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsorem ipsum dolororem lor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsum dolororem ipsum dolor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsum dolor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-				<section class="book">
-					<div class="cover"><img class="book_cover" src="design.png" alt="" /></div>
-					<div class="book_info">
-						<h2 class="book_title">Book Title</h2>
-						<p class="author_name">Author Name</p>
-						<p class="descripttion">Lorem ipsum dolor sit amet</p>
-						<p class="more_info"><a href="" target="_blank">More Info</a></p>
-					</div>
-				</section>
-			</section>
+			<section id="results" class="results"></section>
 		</main>
 	</body>
 </html>
