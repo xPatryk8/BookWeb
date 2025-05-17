@@ -1,4 +1,4 @@
-let show = false;
+let show = true;
 
 function showCheckboxes() {
 	let checkboxes = document.getElementById("checkBoxes");
@@ -11,7 +11,6 @@ function showCheckboxes() {
 		show = true;
 	}
 }
-
 
 function getData() {
 	let checkboxes = document.getElementsByName("genre");
@@ -99,4 +98,3 @@ async function showBooks() {
 		results.appendChild(book);
 	}
 }
-
