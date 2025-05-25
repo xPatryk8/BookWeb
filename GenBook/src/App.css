@@ -19,6 +19,7 @@ label {
 
 #genreList {
 	overflow: auto;
+	min-height: 300px;
 	max-height: 300px;
 	margin-bottom: 10px;
 }
@@ -26,6 +27,20 @@ label {
 input[type="checkbox"] {
 	height: 20px;
 	width: 20px;
+}
+
+#choose_year {
+	margin-top: 10px;
+	display: flex;
+}
+
+#choose_year input {
+	width: 70%;
+	margin: 0;
+}
+
+#choose_year label {
+	width: 40%;
 }
 /* 
 .book {

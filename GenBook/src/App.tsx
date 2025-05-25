@@ -74,6 +74,24 @@ function Languages() {
 	);
 }
 
+function Year() {
+	return (
+		<div id="years">
+			<h4>Years</h4>
+			<div id="choose_year">
+				<label>
+					Min year
+					<input type="number" name="min_year" id="min_year" min="10" max="2025" />
+				</label>
+				<label>
+					Max year
+					<input type="number" name="max_year" id="max_year" min="10" max="2025" />
+				</label>
+			</div>
+		</div>
+	);
+}
+
 function Results() {
 	return (
 		<section id="results" className="results">
@@ -92,6 +110,7 @@ function App() {
 				<nav>
 					<Genres></Genres>
 					<Languages></Languages>
+					<Year></Year>
 				</nav>
 				<div id="books">
 					<Results></Results>
