@@ -68,6 +68,11 @@ select {
 
 a {
 	text-decoration: none;
+	color: #272c8b;
+}
+
+a:hover {
+	color: #161b7a;
 }
 
 .results {
