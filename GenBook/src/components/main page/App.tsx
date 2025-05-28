@@ -116,53 +116,6 @@ function App() {
 					<Results></Results>
 				</div>
 			</main>
-
-			{/* <>
-				
-				<main>
-					<form>
-						<div className="multipleSelection">
-							<div className="selectBox">
-								<select>
-									<option>Select options</option>
-									<option value="test">yitufvytui</option>
-								</select>
-								<div className="overSelect" />
-							</div>
-							<div id="checkBoxes">
-								<label htmlFor="action">
-									<input type="checkbox" name="genre" defaultValue="action" id="action" />
-									Action
-								</label>
-								<br />
-								<label htmlFor="horror">
-									<input type="checkbox" name="genre" defaultValue="horror" id="horror" />
-									Horror
-								</label>
-								<br />
-								<label htmlFor="romance">
-									<input type="checkbox" name="genre" defaultValue="romance" id="romance" />
-									Romance
-								</label>
-								<br />
-								<label htmlFor="biography">
-									<input type="checkbox" name="genre" defaultValue="biography" id="biography" />
-									Biography
-								</label>
-								<br />
-								<label htmlFor="adventure">
-									<input type="checkbox" name="genre" defaultValue="adventure" id="adventure" />
-									Adventure
-								</label>
-								<br />
-							</div>
-						</div>
-						<input type="text" name="author" id="author" placeholder="Author Name" />
-						<input type="button" id="generate" defaultValue="Generate Book" />
-					</form>
-					<section id="results" className="results" />
-				</main>
-			</> */}
 		</>
 	);
 }
