@@ -1,0 +1,95 @@
+header {
+	text-align: center;
+}
+
+main {
+	display: flex;
+}
+
+nav {
+	width: 20%;
+	font-size: 25px;
+	margin-left: 10px;
+}
+
+label {
+	display: block;
+	margin-left: 12px;
+}
+
+#genreList {
+	overflow: auto;
+	min-height: 300px;
+	max-height: 300px;
+	margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+	height: 20px;
+	width: 20px;
+}
+
+#choose_year {
+	margin-top: 10px;
+	display: flex;
+}
+
+#choose_year input {
+	width: 70%;
+	margin: 0;
+}
+
+#choose_year label {
+	width: 40%;
+}
+
+#booksList {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	gap: 32px;
+	width: 75%;
+}
+
+.book {
+	max-height: 380px;
+
+	display: flex;
+	justify-content: center;
+
+	border: 2px solid var(--border);
+	border-radius: 1.5rem;
+}
+
+.title {
+	font-size: 45px;
+}
+
+.author,
+.description,
+.moreInfo {
+	font-size: 25px;
+	margin-left: 5px;
+}
+
+.author {
+	margin-top: -15px;
+}
+
+.description {
+	margin-top: 25px;
+}
+
+.bookCover {
+	height: 300px;
+	padding: 8px;
+}
+
+.bookInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.moreInfo {
+	margin-top: auto;
+	margin-bottom: 20px;
+}
