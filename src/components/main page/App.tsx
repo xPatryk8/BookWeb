@@ -2,46 +2,27 @@ import { useState } from "react";
 import "./App.css";
 
 function Genres() {
-	const genres = [
-		{ key: 0, name: "Adventure" },
-		{ key: 1, name: "Detective" },
-		{ key: 2, name: "Dystopian" },
-		{ key: 3, name: "Fantasy" },
-		{ key: 4, name: "Historical Fiction" },
-		{ key: 5, name: "History" },
-		{ key: 6, name: "Horror" },
-		{ key: 7, name: "Mystery" },
-		{ key: 8, name: "Poetry" },
-		{ key: 9, name: "Psychology" },
-		{ key: 10, name: "Romance" },
-		{ key: 11, name: "Sci-Fi" },
-		{ key: 12, name: "Young Adult" },
-	];
+	const genres: string[] = ["Adventure", "Detective", "Dystopian", "Fantasy", "Historical Fiction", "History", "Horror", "Mystery", "Poetry", "Psychology", "Romance", "Sci-Fi", "Young Adult"];
 
-	const [searchItem, setSearchItem] = useState("");
-	const [filteredGenres, setFilteredGenres] = useState(genres);
+	const [searchItem, setSearchItem] = useState<string>("");
+	const [selected, setSelected] = useState<string[]>([]);
 
-	// TODO: fix searching
-	const handleInput = (searchValue: string) => {
-		setSearchItem(searchValue);
-		if (searchItem !== " ") {
-			const filtered = genres.filter((item) => {
-				return Object.values(item).join("").toLowerCase().includes(searchItem.toLowerCase());
-			});
-			setFilteredGenres(filtered);
-		} else {
-			setFilteredGenres(genres);
-		}
+	const handleCheckbox = (genre: string) => {
+		const updated = selected.includes(genre) ? selected.filter((g) => g !== genre) : [...selected, genre];
+
+		setSelected(updated);
 	};
+
+	const filteredGenres = genres.filter((g) => g.toLowerCase().includes(searchItem.toLowerCase()));
 
 	return (
 		<>
-			<input type="text" value={searchItem} onChange={(e) => handleInput(e.target.value)} name="searchGenre" id="SearchGenre" placeholder="Search genre..." />
+			<input type="text" value={searchItem} onChange={(e) => setSearchItem(e.target.value)} placeholder="Search genre..." />
 			<div id="genreList">
-				{filteredGenres.map((gen) => (
-					<label key={gen.key}>
-						<input type="checkbox" name={gen.name} id={gen.name} />
-						{gen.name}
+				{filteredGenres.map((genre) => (
+					<label key={genre}>
+						<input type="checkbox" checked={selected.includes(genre)} onChange={() => handleCheckbox(genre)} />
+						{genre}
 					</label>
 				))}
 			</div>
